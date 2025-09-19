@@ -29,6 +29,7 @@ jobs:
       - name: Run tests
         env:
           DATABASE_URL: sqlite+aiosqlite:///./test.db
+          PYTHONPATH: ${{ github.workspace }}
         run: |
           pytest -q
 
