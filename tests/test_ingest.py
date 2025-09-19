@@ -15,7 +15,7 @@ def test_ingest_weather(lat, lon, monkeypatch):
 
     # Patch the symbol actually used by the router
     monkeypatch.setattr(ingest_router.svc, "fetch_weather", fake_fetch_weather)
-
+    
     payload = {"lat": lat, "lon": lon, "location_name": "Cologne"}
     r = client.post("/ingest/weather", json=payload)
     assert r.status_code == 200
