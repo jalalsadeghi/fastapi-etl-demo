@@ -1,0 +1,13 @@
+# =============================
+# docker-compose.yml
+# =============================
+version: "3.9"
+services:
+  api:
+    build: .
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:///./app.db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
